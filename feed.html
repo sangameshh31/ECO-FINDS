@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Product Feed</h2>
+<div class="row g-3">
+  {% for p in products %}
+    <div class="col-md-4">
+      <div class="card p-3">
+        <h5>{{ p['title'] }}</h5>
+        <p>{{ p['description'] }}</p>
+        <small>Category: {{ p['category'] }}</small><br>
+        <strong>${{ p['price'] }}</strong>
+      </div>
+    </div>
+  {% else %}
+    <p>No products available.</p>
+  {% endfor %}
+</div>
+{% endblock %}
